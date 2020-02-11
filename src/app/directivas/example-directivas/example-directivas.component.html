@@ -1,0 +1,45 @@
+<!-- <ul>
+  <li *ngFor="let color of colors" [style.color]="color">
+    {{ color }}
+  </li>
+</ul> -->
+
+<!-- <ul>
+  <li
+    *ngFor="let color of colors; let e = even; let o = odd; let l = last"
+    [ngClass]="{ even: e && !l, odd: o && !l, last: l }"
+  >
+    {{ color }}
+  </li>
+</ul> -->
+
+<!-- <ul>
+  <li
+    *ngFor="let color of colors; let e = even; let o = odd; let l = last"
+    [style.color]="color"
+    [ngClass]="{ even: e && !l, odd: o && !l, last: l }"
+    [ngSwitch]="color"
+  >
+    <span *ngSwitchCase="'blue'">Yo soy azul</span>
+    <span *ngSwitchDefault>{{ color }}</span>
+  </li>
+</ul> -->
+
+<!-- necesitamos un div controlador -->
+
+<div *ngIf="show; then thenBlock; else elseBlock"></div>
+<ng-template #thenBlock>
+  <ul>
+    <li
+      *ngFor="let color of colors; let e = even; let o = odd; let l = last"
+      [style.color]="color"
+      [ngClass]="{ even: e && !l, odd: o && !l, last: l }"
+      [ngSwitch]="color"
+    >
+      <span *ngSwitchCase="'blue'">Yo soy azul</span>
+      <span *ngSwitchDefault>{{ color | uppercase | decorator: " ^^ " }}</span>
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #elseBlock> no muestro nada </ng-template>
