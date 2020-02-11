@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { FirstService } from "src/app/first.service";
 
 @Component({
   selector: "app-father",
@@ -6,9 +7,11 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./father.component.css"]
 })
 export class FatherComponent implements OnInit {
-  messageToChild: string;
+  messageToChild;
   messageFromChild: string;
-  constructor() {}
+
+  // Estamos haciendo inyección del servicio en el constructor, sin hacer new
+  constructor(private firstService: FirstService) {}
 
   ngOnInit(): void {}
 
@@ -16,7 +19,6 @@ export class FatherComponent implements OnInit {
     this.messageFromChild = ev;
   }
   onClick() {
-    // alert("Hello! I am an alert box!!");
-    this.messageToChild = "Hola hijo";
+    this.messageToChild = this.firstService.getMessage();
   }
 }
