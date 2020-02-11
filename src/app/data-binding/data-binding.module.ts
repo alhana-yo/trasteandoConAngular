@@ -4,7 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { ChildComponent } from "./child/child.component";
 import { FatherComponent } from "./father/father.component";
 
-const ROUTES: Routes = [{ path: "data-binding", component: FatherComponent }];
+const ROUTES: Routes = [{ path: "", component: FatherComponent }];
 @NgModule({
   declarations: [FatherComponent, ChildComponent],
   imports: [CommonModule, RouterModule.forChild(ROUTES)],
