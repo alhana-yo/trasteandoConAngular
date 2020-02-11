@@ -10,15 +10,33 @@ const config = {
   api: "http://back"
 };
 
+// const ROUTES: Routes = [
+//   { path: "", redirectTo: "directivas", pathMatch: "full" },
+//   {
+//     path: "directivas",
+//     loadChildren: "./directivas/directivas.module#DirectivasModule"
+//   },
+//   {
+//     path: "data-binding",
+//     loadChildren: "./data-binding/data-binding.module#DataBindingModule"
+//   },
+//   { path: "**", redirectTo: "directivas" }
+// ];
+// En angular 9
+
 const ROUTES: Routes = [
   { path: "", redirectTo: "directivas", pathMatch: "full" },
   {
     path: "directivas",
-    loadChildren: "./directivas/directivas.module#DirectivasModule"
+    loadChildren: () =>
+      import("./directivas/directivas.module").then(m => m.DirectivasModule)
   },
   {
     path: "data-binding",
-    loadChildren: "./data-binding/data-binding.module#DataBindingModule"
+    loadChildren: () =>
+      import("./data-binding/data-binding.module").then(
+        m => m.DataBindingModule
+      )
   },
   { path: "**", redirectTo: "directivas" }
 ];
