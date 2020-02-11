@@ -3,6 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from "./app.component";
 // ya no hace falta importar estos módulos porque los cargamos mediante el lazy loading
+// con esto conseguimos reducir el tamaño del bundle principal. Porque de esta manera, los módulos cargados lazy, no están cargados desde el principio
 // import { DataBindingModule } from "./data-binding/data-binding.module";
 // import { DirectivasModule } from "./directivas/directivas.module";
 

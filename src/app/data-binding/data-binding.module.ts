@@ -4,6 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { ChildComponent } from "./child/child.component";
 import { FatherComponent } from "./father/father.component";
 
+// partimos de cero, porque vamos a cargar este módulo lazy
 const ROUTES: Routes = [{ path: "", component: FatherComponent }];
 @NgModule({
   declarations: [FatherComponent, ChildComponent],
