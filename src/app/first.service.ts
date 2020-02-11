@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Inject, Injectable } from "@angular/core";
 import { SecondService } from "./second.service";
 
 // Los servicios se usan para sacar lógica de los componentes, y que se pueda
@@ -7,13 +7,20 @@ import { SecondService } from "./second.service";
   providedIn: "root"
 })
 export class FirstService {
-  constructor(private secondService: SecondService) {}
+  constructor(
+    private secondService: SecondService,
+    @Inject("config") private config: any
+  ) {}
 
   // getMessage(): string {
   //   return "Hola hijo! desde el servicio";
   // }
   // usamos el segundo servicio dentro del primero
   getMessage(): string {
-    return "Hola hijo! desde el servicio" + this.secondService.getMessage();
+    return (
+      this.config.api +
+      "Hola hijo! desde el servicio" +
+      this.secondService.getMessage()
+    );
   }
 }
