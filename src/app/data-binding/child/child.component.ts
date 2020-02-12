@@ -6,6 +6,7 @@ import {
   OnInit,
   Output
 } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-child",
@@ -13,11 +14,13 @@ import {
   styleUrls: ["./child.component.css"]
 })
 export class ChildComponent implements OnInit, OnChanges {
-  constructor() {}
+  constructor(private activatedRoute: ActivatedRoute) {}
   @Input() message: string; // abro una interfaz donde le permito a otro componente pasarme info
   @Output() reply = new EventEmitter<string>();
-
-  ngOnInit() {}
+  id: string;
+  ngOnInit() {
+    this.id = this.activatedRoute.snapshot.params.curso;
+  }
   // Este método es para estar atentos a los cambios que hay dentro de los inputs
   ngOnChanges() {
     this.reply.emit(`me has dicho ${this.message}`);
