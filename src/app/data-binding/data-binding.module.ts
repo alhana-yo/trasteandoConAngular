@@ -8,6 +8,8 @@ import { FatherComponent } from "./father/father.component";
 // partimos de cero, porque vamos a cargar este módulo lazy
 const ROUTES: Routes = [
   { path: "", component: FatherComponent },
+
+  // ojo! hay que añadirlo también en la ruta del componente
   { path: ":curso", component: ChildComponent, canDeactivate: [ConfirmService] }
 ];
 @NgModule({
