@@ -25,6 +25,7 @@ export class FatherComponent implements OnInit {
   }
 
   goToDirectivas() {
+    // this.router.navigate(["directivas"], { queryParams: { param: "holi" } });
     this.router.navigate(["directivas"]);
   }
 }

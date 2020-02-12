@@ -18,8 +18,10 @@ export class ChildComponent implements OnInit, OnChanges {
   @Input() message: string; // abro una interfaz donde le permito a otro componente pasarme info
   @Output() reply = new EventEmitter<string>();
   id: string;
+  param: string;
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.params.curso;
+    this.param = this.activatedRoute.snapshot.queryParams.param;
   }
   // Este método es para estar atentos a los cambios que hay dentro de los inputs
   ngOnChanges() {
