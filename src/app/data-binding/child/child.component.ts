@@ -18,6 +18,7 @@ export class ChildComponent implements OnInit, OnChanges {
   @Output() reply = new EventEmitter<string>();
 
   ngOnInit() {}
+  // Este método es para estar atentos a los cambios que hay dentro de los inputs
   ngOnChanges() {
     this.reply.emit(`me has dicho ${this.message}`);
   }
