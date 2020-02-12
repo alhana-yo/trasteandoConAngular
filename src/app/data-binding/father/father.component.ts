@@ -24,7 +24,7 @@ export class FatherComponent implements OnInit {
     this.messageToChild = this.firstService.getMessage();
   }
 
-  goToDirectivas(directivas) {
+  goToDirectivas() {
     this.router.navigate(["directivas"]);
   }
 }
