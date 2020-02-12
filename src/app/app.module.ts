@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from "./app.component";
+import { AuthService } from "./auth/auth.service";
 // ya no hace falta importar estos módulos porque los cargamos mediante el lazy loading
 // con esto conseguimos reducir el tamaño del bundle principal. Porque de esta manera, los módulos cargados lazy, no están cargados desde el principio
 // import { DataBindingModule } from "./data-binding/data-binding.module";
@@ -34,6 +35,7 @@ const ROUTES: Routes = [
   },
   {
     path: "data-binding",
+    canActivate: [AuthService],
     loadChildren: () =>
       import("./data-binding/data-binding.module").then(
         m => m.DataBindingModule

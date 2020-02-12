@@ -17,6 +17,6 @@ export class AuthService implements CanActivate {
     state: RouterStateSnapshot
   ): boolean {
     const token = sessionStorage.getItem("token");
-    return token !== "";
+    return token && token !== "";
   }
 }
