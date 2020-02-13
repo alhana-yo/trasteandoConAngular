@@ -3,5 +3,6 @@
   <input type="text" formControlName="username">
   <p>Password</p>
   <input type="password" formControlName="password">
-  <button (click)="onSave()">Send</button>
+  <button [disabled]="!form.valid" (click)="onSave()">Send</button>
 </form>
+{{form.valid}}
