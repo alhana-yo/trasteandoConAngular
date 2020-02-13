@@ -1,1 +1,7 @@
-<p>login works!</p>
+<form [formGroup]="form">
+  <p>Username</p>
+  <input type="text" formControlName="username">
+  <p>Password</p>
+  <input type="password" formControlName="password">
+  <button (click)="onSave()">Send</button>
+</form>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { AuthModule } from './auth/auth.module';
 import { AuthService } from './auth/auth.service';
 import { LoginComponent } from './auth/login/login.component';
 import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
@@ -51,7 +52,7 @@ const ROUTES: Routes = [
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, RouterModule.forRoot(ROUTES), LayoutsModule],
+  imports: [BrowserModule, RouterModule.forRoot(ROUTES), LayoutsModule, AuthModule],
   providers: [{ provide: 'config', useValue: config }],
 
   bootstrap: [AppComponent]
