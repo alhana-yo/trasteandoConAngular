@@ -17,9 +17,10 @@ export class LoginComponent implements OnInit {
     this.form = new FormGroup({
       // username: new FormControl('valor por defecto'),
       username: new FormControl('', [Validators.required, CommonValidator.startWithNumber], [CommonValidator.userTaken]),
-      password: new FormControl('', [Validators.required])
+      password: new FormControl('', [Validators.required, Validators.minLength(2)])
     });
   }
+
 
   onSave() {
     console.log(this.form.value);
