@@ -7,5 +7,8 @@
   <a [routerLink]="['/directivas']">Directivas</a>
   <a [routerLink]="['/data-binding']">Data Binding</a>
   <a [routerLink]="['/data-binding/curso']" [queryParams]="{ param: '5678' }">Al componente hijo</a>
+  <!-- añadimos el nuevo item de navegación -->
+  <a [routerLink]="['/chuck']"> Chuck</a>
+
 </nav>
 <router-outlet></router-outlet>

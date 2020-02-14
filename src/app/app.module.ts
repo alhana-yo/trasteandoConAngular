@@ -34,6 +34,12 @@ const ROUTES: Routes = [
           import('./data-binding/data-binding.module').then(
             m => m.DataBindingModule
           )
+      },
+      // Declaramos una nueva línea
+      {
+        path: 'chuck',
+        loadChildren: () =>
+          import('./chuck/chuck.module').then(m => m.ChuckModule)
       }
     ]
   },
