@@ -15,7 +15,7 @@ import { SimpleComponent } from './layouts/simple/simple.component';
 // import { DirectivasModule } from "./directivas/directivas.module";
 
 const config = {
-  api: 'http://back'
+  api: 'http://localhost:3001/api/random-quote'
 };
 
 const ROUTES: Routes = [

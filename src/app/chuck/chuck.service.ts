@@ -13,7 +13,7 @@ export class ChuckService {
   constructor(private http: HttpClient) { }
 
   getInfo(): Observable<string> {
-    // return this.http.get<string>(this.config.api);
+    // return this.http.get(this.config.api, { responseType: 'text' });
     return this.http.get('http://localhost:3001/api/random-quote', { responseType: 'text' });
   }
 }

@@ -7,7 +7,6 @@ import { ChuckComponent } from './chuck/chuck.component';
 // ESto es un modulo secundario. Como es carga lazy, tiene que tener el path ' '
 const ROUTES: Routes = [{ path: '', component: ChuckComponent }];
 
-const config = { api: 'http://localhost:3001/api/random-quote' };
 @NgModule({
   declarations: [ChuckComponent],
   imports: [

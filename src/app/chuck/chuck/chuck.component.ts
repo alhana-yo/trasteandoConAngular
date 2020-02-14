@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { ChuckService } from '../chuck.service';
 
 
@@ -37,7 +36,7 @@ export class ChuckComponent implements OnInit {
 
   // tslint:disable-next-line: use-lifecycle-interface
   // ngOnDestroy() {
-  //    this.sub.unsubscribe();
+  //   this.sub.unsubscribe();
   // }
 
 }
