@@ -20,7 +20,7 @@ export class ChuckComponent implements OnInit {
     this.getPublicQuote();
   }
 
-  // searchInfo() {
+  // getPublicQuote() {
   //   this.sub = this.chuckService.getInfo().subscribe(
   //     response => {
   //       this.message = response;
@@ -36,8 +36,8 @@ export class ChuckComponent implements OnInit {
   }
 
   // tslint:disable-next-line: use-lifecycle-interface
-  ngOnDestroy() {
-    // this.sub.unsubscribe();
-  }
+  // ngOnDestroy() {
+  //    this.sub.unsubscribe();
+  // }
 
 }
