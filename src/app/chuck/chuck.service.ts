@@ -16,4 +16,8 @@ export class ChuckService {
     // return this.http.get(this.config.api, { responseType: 'text' });
     return this.http.get('http://localhost:3001/api/random-quote', { responseType: 'text' });
   }
+
+  getPrivateInfo(): Observable<string> {
+    return this.http.get('http://localhost:3001/api/protected/random-quote', { responseType: 'text' });
+  }
 }

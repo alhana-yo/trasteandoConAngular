@@ -13,11 +13,14 @@ export class ChuckComponent implements OnInit {
   // sub: Subscription;
 
   publicQuote: Observable<string>;
+  privateQuote: Observable<string>;
 
   constructor(private chuckService: ChuckService) { }
 
   ngOnInit(): void {
     this.getPublicQuote();
+    this.getPrivateQuote();
+
   }
 
   // getPublicQuote() {
@@ -33,6 +36,11 @@ export class ChuckComponent implements OnInit {
 
   getPublicQuote() {
     this.publicQuote = this.chuckService.getInfo();
+  }
+
+
+  getPrivateQuote() {
+    this.privateQuote = this.chuckService.getPrivateInfo();
   }
 
   // tslint:disable-next-line: use-lifecycle-interface
