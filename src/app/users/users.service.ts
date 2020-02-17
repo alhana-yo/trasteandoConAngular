@@ -18,7 +18,7 @@ export class UsersService {
       // le esta llegando el array de usersDTO y lo vamos a trasformar a un array de users
       map((usersDTO: UserDTO[]) => {
         const users: User[] = [];
-        usersDTO.map((usersDTO: UserDTO) => {
+        return usersDTO.map((usersDTO: UserDTO) => {
           const user: User = {
             city: usersDTO.address.city,
             email: usersDTO.email,
@@ -28,9 +28,11 @@ export class UsersService {
           };
           // Ojo, meter el objeto en el array con un spread. NUNCA usar push, porque al hacer push estamos haciendo algo mutable
           // users = [...users, user];
-          return users; // o hacer el return del map, porque el map ya te devuelve un array diferente al UsersDTO
+          // o hacer el return del map, porque el map ya te devuelve un array diferente al UsersDTO
+          return user;
+
         });
-        return users;
+
       })
     );
   }
