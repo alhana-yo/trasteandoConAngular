@@ -1,8 +1,9 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { AuthInterceptorService } from './auth/auth-interceptor-service.service';
 import { AuthModule } from './auth/auth.module';
 import { AuthService } from './auth/auth.service';
 import { LoginComponent } from './auth/login/login.component';
@@ -60,7 +61,11 @@ const ROUTES: Routes = [
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, RouterModule.forRoot(ROUTES), LayoutsModule, AuthModule, HttpClientModule],
-  providers: [{ provide: 'config', useValue: config }],
+  providers: [{ provide: 'config', useValue: config }, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
+  }],
 
   bootstrap: [AppComponent]
 })
