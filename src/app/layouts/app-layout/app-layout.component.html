@@ -1,0 +1,14 @@
+<p>app-layout works!</p>
+<!-- tanto en este componente como en simple componente, van a ser donde pongamos nuestras rutas anidadas.router-outlet. -->
+
+<!-- En este caso, tenemos que poner los componentes data-binding, y directivas -->
+
+<nav>
+  <a [routerLink]="['/directivas']">Directivas</a>
+  <a [routerLink]="['/data-binding']">Data Binding</a>
+  <a [routerLink]="['/data-binding/curso']" [queryParams]="{ param: '5678' }">Al componente hijo</a>
+  <!-- añadimos el nuevo item de navegación -->
+  <a [routerLink]="['/chuck']"> Chuck</a>
+  <a [routerLink]="['/users']"> users</a>
+</nav>
+<router-outlet></router-outlet>

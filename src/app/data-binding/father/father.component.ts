@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { FirstService } from "src/app/first.service";
 
 @Component({
   selector: "app-father",
@@ -6,9 +8,12 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./father.component.css"]
 })
 export class FatherComponent implements OnInit {
-  messageToChild: string;
+  messageToChild;
   messageFromChild: string;
-  constructor() {}
+
+  // Estamos haciendo inyección del servicio en el constructor, sin hacer new
+  // e inyectamos el servicio predefinido del router
+  constructor(private firstService: FirstService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -16,7 +21,11 @@ export class FatherComponent implements OnInit {
     this.messageFromChild = ev;
   }
   onClick() {
-    // alert("Hello! I am an alert box!!");
-    this.messageToChild = "Hola hijo";
+    this.messageToChild = this.firstService.getMessage();
+  }
+
+  goToDirectivas() {
+    // this.router.navigate(["directivas"], { queryParams: { param: "holi" } });
+    this.router.navigate(["directivas"]);
   }
 }
