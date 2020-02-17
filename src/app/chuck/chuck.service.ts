@@ -12,13 +12,16 @@ export class ChuckService {
   // constructor(private http: HttpClient, @Inject('config') private config: any) { }
   constructor(private http: HttpClient) { }
 
+  // Petición sin autenticación
   getInfo(): Observable<string> {
     // return this.http.get(this.config.api, { responseType: 'text' });
-    /* Petición sin autenticación
-    return this.http.get('http://localhost:3001/api/random-quote', { responseType: 'text' });
-   */
 
-    // Petición con autenticación
+    return this.http.get('http://localhost:3001/api/random-quote', { responseType: 'text' });
+
+  }
+
+  // Petición con autenticación
+  getPrivateInfo(): Observable<string> {
 
     return this.http.get('http://localhost:3001/api/protected/random-quote', { responseType: 'text' });
   }
